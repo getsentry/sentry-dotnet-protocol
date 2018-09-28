@@ -22,6 +22,9 @@ namespace Sentry
         [DataMember(Name = "modules", EmitDefaultValue = false)]
         internal IDictionary<string, string> InternalModules { get; set; }
 
+        [DataMember(Name = "repos", EmitDefaultValue = false)]
+        internal IDictionary<string, Repo> InternalRepos { get; set; }
+
         [DataMember(Name = "event_id", EmitDefaultValue = false)]
         private string SerializableEventId => EventId.ToString("N");
 
@@ -124,6 +127,11 @@ namespace Sentry
         /// A list of relevant modules and their versions.
         /// </summary>
         public IDictionary<string, string> Modules => InternalModules ?? (InternalModules = new Dictionary<string, string>());
+
+        /// <summary>
+        /// The path prefix map to repository
+        /// </summary>
+        public IDictionary<string, Repo> Repos => InternalRepos ?? (InternalRepos = new Dictionary<string, Repo>());
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Sentry.SentryEvent" />

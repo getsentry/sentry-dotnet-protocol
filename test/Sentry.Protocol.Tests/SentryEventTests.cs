@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using Xunit;
 
 namespace Sentry.Protocol.Tests
@@ -42,10 +43,23 @@ namespace Sentry.Protocol.Tests
             sut.InternalFingerprint = new[] { "fingerprint" };
             sut.InternalTags = new ConcurrentDictionary<string, string>();
             sut.InternalTags.TryAdd("tag_key", "tag_value");
+            sut.InternalRepos = new Dictionary<string, Repo>
+            {
+                {
+                    @"D:\buildAgent\am39fnajs\",
+                    new Repo
+                    {
+                        Name = "repo-name",
+                        Prefix = @"app\src",
+                        Revision = "b85f468b90a6a5585668b1b42124e3f0c2ce60d6"
+                    }
+                }
+            };
 
             var actual = JsonSerializer.SerializeObject(sut);
 
             Assert.Equal("{\"modules\":{\"module_key\":\"module_value\"}," +
+                         "\"repos\":{\"D:\\\\buildAgent\\\\am39fnajs\\\\\":{\"name\":\"repo-name\",\"prefix\":\"app\\\\src\",\"revision\":\"b85f468b90a6a5585668b1b42124e3f0c2ce60d6\"}}," +
                          "\"event_id\":\"4b780f4cec0342a78ef8a41c9d5621f8\"," +
                          "\"timestamp\":\"9999-12-31T23:59:59.9999999+00:00\"," +
                          "\"message\":\"message\"," +
@@ -140,6 +154,13 @@ namespace Sentry.Protocol.Tests
         {
             var evt = new SentryEvent();
             Assert.NotNull(evt.Modules);
+        }
+
+        [Fact]
+        public void Repos_Getter_NotNull()
+        {
+            var evt = new SentryEvent();
+            Assert.NotNull(evt.Repos);
         }
     }
 }
