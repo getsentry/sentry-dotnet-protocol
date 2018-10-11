@@ -121,7 +121,7 @@ namespace Sentry
             }
 
             // uri.UserInfo returns empty string instead of null when no user info data is provided
-            if (string.IsNullOrWhiteSpace(uri.UserInfo))
+            if (string.IsNullOrEmpty(uri.UserInfo))
             {
                 if (throwOnError)
                 {
@@ -132,7 +132,7 @@ namespace Sentry
 
             var keys = uri.UserInfo.Split(':');
             var publicKey = keys[0];
-            if (string.IsNullOrWhiteSpace(publicKey))
+            if (string.IsNullOrEmpty(publicKey))
             {
                 if (throwOnError)
                 {
@@ -150,7 +150,7 @@ namespace Sentry
             var path = uri.AbsolutePath.Substring(0, uri.AbsolutePath.LastIndexOf('/'));
             var projectId = uri.AbsoluteUri.Substring(uri.AbsoluteUri.LastIndexOf('/') + 1);
 
-            if (string.IsNullOrWhiteSpace(projectId))
+            if (string.IsNullOrEmpty(projectId))
             {
                 if (throwOnError)
                 {
@@ -169,6 +169,48 @@ namespace Sentry
 
             return Tuple.Create(dsn, projectId, path, secretKey, publicKey, builder.Uri);
         }
+
+#if LACKS_TUPLES
+        private class Tuple<T1, T2, T3, T4, T5, T6>
+        {
+            public T1 Item1 { get; set; }
+            public T2 Item2 { get; set; }
+            public T3 Item3 { get; set; }
+            public T4 Item4 { get; set; }
+            public T5 Item5 { get; set; }
+            public T6 Item6 { get; set; }
+
+            public Tuple(
+                T1 t1,
+                T2 t2,
+                T3 t3,
+                T4 t4,
+                T5 t5,
+                T6 t6)
+            {
+                Item1 = t1;
+                Item2 = t2;
+                Item3 = t3;
+                Item4 = t4;
+                Item5 = t5;
+                Item6 = t6;
+            }
+        }
+
+        private static class Tuple
+        {
+            public static Tuple<T1, T2, T3, T4, T5, T6> Create<T1, T2, T3, T4, T5, T6>(
+                T1 t1,
+                T2 t2,
+                T3 t3,
+                T4 t4,
+                T5 t5,
+                T6 t6)
+            {
+                return new Tuple<T1, T2, T3, T4, T5, T6>(t1, t2, t3, t4, t5, t6);
+            }
+        }
+#endif
 
         /// <summary>
         /// The original DSN string used to create this instance

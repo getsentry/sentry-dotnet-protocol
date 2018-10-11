@@ -1,4 +1,6 @@
+#if !LACKS_CONCURRENT_COLLECTIONS
 using System.Collections.Concurrent;
+#endif
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -31,13 +33,31 @@ namespace Sentry.Protocol
         internal IEnumerable<string> InternalFingerprint { get; set; }
 
         [DataMember(Name = "breadcrumbs", EmitDefaultValue = false)]
-        internal ConcurrentQueue<Breadcrumb> InternalBreadcrumbs { get; set; }
+        internal
+#if LACKS_CONCURRENT_COLLECTIONS
+        Queue<Breadcrumb>
+#else
+        ConcurrentQueue<Breadcrumb>
+#endif
+        InternalBreadcrumbs { get; set; }
 
         [DataMember(Name = "extra", EmitDefaultValue = false)]
-        internal ConcurrentDictionary<string, object> InternalExtra { get; set; }
+        internal
+#if LACKS_CONCURRENT_COLLECTIONS
+        Dictionary<string, object>
+#else
+        ConcurrentDictionary<string, object>
+#endif
+        InternalExtra { get; set; }
 
         [DataMember(Name = "tags", EmitDefaultValue = false)]
-        internal ConcurrentDictionary<string, string> InternalTags { get; set; }
+        internal
+#if LACKS_CONCURRENT_COLLECTIONS
+        Dictionary<string, string>
+#else
+        ConcurrentDictionary<string, string>
+#endif
+        InternalTags { get; set; }
 
         /// <summary>
         /// An optional scope option
@@ -135,30 +155,44 @@ namespace Sentry.Protocol
         /// A trail of events which happened prior to an issue.
         /// </summary>
         /// <seealso href="https://docs.sentry.io/learn/breadcrumbs/"/>
-        public IEnumerable<Breadcrumb> Breadcrumbs => InternalBreadcrumbs ?? (InternalBreadcrumbs = new ConcurrentQueue<Breadcrumb>());
+        public IEnumerable<Breadcrumb> Breadcrumbs => InternalBreadcrumbs ?? (InternalBreadcrumbs =
+#if LACKS_CONCURRENT_COLLECTIONS
+            new Queue<Breadcrumb>());
+#else
+            new ConcurrentQueue<Breadcrumb>());
+#endif
 
         /// <summary>
         /// An arbitrary mapping of additional metadata to store with the event.
         /// </summary>
         public
-#if NET45
+#if LACKS_CONCURRENT_COLLECTIONS || LACKS_READONLY_COLLECTIONS
             IDictionary<string, object>
 #else
             IReadOnlyDictionary<string, object>
 #endif
-            Extra => InternalExtra ?? (InternalExtra = new ConcurrentDictionary<string, object>());
+            Extra => InternalExtra ?? (InternalExtra =
+#if LACKS_CONCURRENT_COLLECTIONS
+            new Dictionary<string, object>());
+#else
+            new ConcurrentDictionary<string, object>());
+#endif
 
         /// <summary>
         /// Arbitrary key-value for this event
         /// </summary>
         public
-#if NET45
+#if LACKS_READONLY_COLLECTIONS || LACKS_CONCURRENT_COLLECTIONS
             IDictionary<string, string>
 #else
             IReadOnlyDictionary<string, string>
 #endif
-            Tags => InternalTags ?? (InternalTags = new ConcurrentDictionary<string, string>());
-
+            Tags => InternalTags ?? (InternalTags =
+#if LACKS_CONCURRENT_COLLECTIONS
+            new Dictionary<string, string>());
+#else
+            new ConcurrentDictionary<string, string>());
+#endif
         /// <summary>
         /// Creates a scope with the specified options
         /// </summary>

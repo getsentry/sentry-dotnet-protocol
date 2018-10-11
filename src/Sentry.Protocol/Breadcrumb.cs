@@ -50,8 +50,11 @@ namespace Sentry.Protocol
         /// Additional parameters that are unsupported by the type are rendered as a key/value table.
         /// </remarks>
         [DataMember(Name = "data", EmitDefaultValue = false)]
+#if LACKS_READONLY_COLLECTIONS
+        public IDictionary<string, string> Data { get; }
+#else
         public IReadOnlyDictionary<string, string> Data { get; }
-
+#endif
         /// <summary>
         /// Dotted strings that indicate what the crumb is or where it comes from.
         /// </summary>
@@ -82,7 +85,11 @@ namespace Sentry.Protocol
         public Breadcrumb(
             string message,
             string type,
+#if LACKS_READONLY_COLLECTIONS
+            IDictionary<string, string> data = null,
+#else
             IReadOnlyDictionary<string, string> data = null,
+#endif
             string category = null,
             BreadcrumbLevel level = default)
         : this(
@@ -101,7 +108,11 @@ namespace Sentry.Protocol
             DateTimeOffset? timestamp = null,
             string message = null,
             string type = null,
+#if LACKS_READONLY_COLLECTIONS
+            IDictionary<string, string> data = null,
+#else
             IReadOnlyDictionary<string, string> data = null,
+#endif
             string category = null,
             BreadcrumbLevel level = default)
         {

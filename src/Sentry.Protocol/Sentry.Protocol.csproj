@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard1.3;net46;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard1.3;net46;net45;net35</TargetFrameworks>
     <LangVersion>7.2</LangVersion>
     <PackageId>Sentry.Protocol</PackageId>
     <AssemblyName>Sentry.Protocol</AssemblyName>
@@ -17,6 +17,17 @@
 
   <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <DefineConstants>HAS_VALUE_TUPLE;$(AdditionalConstants)</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net45'">
+    <DefineConstants>LACKS_READONLY_COLLECTIONS;$(AdditionalConstants)</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
+    <Reference Include="System" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net35'">
+    <DefineConstants>LACKS_TUPLES;LACKS_READONLY_COLLECTIONS;LACKS_CONCURRENT_COLLECTIONS;$(AdditionalConstants)</DefineConstants>
   </PropertyGroup>
 
 </Project>

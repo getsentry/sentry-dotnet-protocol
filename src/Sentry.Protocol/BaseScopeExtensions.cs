@@ -1,5 +1,7 @@
 using System;
+#if !LACKS_CONCURRENT_COLLECTIONS
 using System.Collections.Concurrent;
+#endif
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -95,7 +97,11 @@ namespace Sentry
             string message,
             string category = null,
             string type = null,
+#if LACKS_READONLY_COLLECTIONS
+            IDictionary<string, string> data = null,
+#else
             IReadOnlyDictionary<string, string> data = null,
+#endif
             BreadcrumbLevel level = default)
             => scope.AddBreadcrumb(new Breadcrumb(
                 timestamp: timestamp,
@@ -127,13 +133,22 @@ namespace Sentry
                 }
             }
 
+#if LACKS_CONCURRENT_COLLECTIONS
+            var breadcrumbs = (Queue<Breadcrumb>)scope.Breadcrumbs;
+#else
             var breadcrumbs = (ConcurrentQueue<Breadcrumb>)scope.Breadcrumbs;
+#endif
+
 
             var overflow = breadcrumbs.Count - (scope.ScopeOptions?.MaxBreadcrumbs
                                                 ?? Constants.DefaultMaxBreadcrumbs) + 1;
             if (overflow > 0)
             {
+#if LACKS_CONCURRENT_COLLECTIONS
+                breadcrumbs.Dequeue();
+#else
                 breadcrumbs.TryDequeue(out _);
+#endif
             }
 
             breadcrumbs.Enqueue(breadcrumb);
@@ -154,7 +169,7 @@ namespace Sentry
         /// <param name="key">The key.</param>
         /// <param name="value">The value.</param>
         public static void SetExtra(this BaseScope scope, string key, object value)
-            => ((ConcurrentDictionary<string, object>)scope.Extra).AddOrUpdate(key, value, (s, o) => value);
+            => ((IDictionary<string, object>)scope.Extra)[key] = value;
 
         /// <summary>
         /// Sets the extra key-value pairs to the <see cref="BaseScope"/>
@@ -163,10 +178,10 @@ namespace Sentry
         /// <param name="values">The values.</param>
         public static void SetExtras(this BaseScope scope, IEnumerable<KeyValuePair<string, object>> values)
         {
-            var extra = (ConcurrentDictionary<string, object>)scope.Extra;
+            var extra = (IDictionary<string, object>)scope.Extra;
             foreach (var keyValuePair in values)
             {
-                extra.AddOrUpdate(keyValuePair.Key, keyValuePair.Value, (s, o) => keyValuePair.Value);
+                extra[keyValuePair.Key] = keyValuePair.Value;
             }
         }
 
@@ -177,7 +192,7 @@ namespace Sentry
         /// <param name="key">The key.</param>
         /// <param name="value">The value.</param>
         public static void SetTag(this BaseScope scope, string key, string value)
-            => ((ConcurrentDictionary<string, string>)scope.Tags).AddOrUpdate(key, value, (s, o) => value);
+            => ((IDictionary<string, string>)scope.Tags)[key] = value;
 
         /// <summary>
         /// Set all items as tags
@@ -186,10 +201,10 @@ namespace Sentry
         /// <param name="tags"></param>
         public static void SetTags(this BaseScope scope, IEnumerable<KeyValuePair<string, string>> tags)
         {
-            var internalTags = (ConcurrentDictionary<string, string>)scope.Tags;
+            var internalTags = (IDictionary<string, string>)scope.Tags;
             foreach (var keyValuePair in tags)
             {
-                internalTags.AddOrUpdate(keyValuePair.Key, keyValuePair.Value, (s, o) => keyValuePair.Value);
+                internalTags[keyValuePair.Key] = keyValuePair.Value;
             }
         }
 
@@ -199,7 +214,11 @@ namespace Sentry
         /// <param name="scope">The scope.</param>
         /// <param name="key"></param>
         public static void UnsetTag(this BaseScope scope, string key)
+#if !LACKS_CONCURRENT_COLLECTIONS
             => scope.InternalTags?.TryRemove(key, out _);
+#else
+            => scope.InternalTags?.Remove(key);
+#endif
 
         /// <summary>
         /// Applies the data from one scope to the other while
@@ -230,14 +249,37 @@ namespace Sentry
 
             if (from.InternalBreadcrumbs != null)
             {
-                ((ConcurrentQueue<Breadcrumb>)to.Breadcrumbs).EnqueueAll(from.InternalBreadcrumbs);
+                var values =
+#if LACKS_CONCURRENT_COLLECTIONS
+                ((Queue<Breadcrumb>)
+#else
+                ((ConcurrentQueue<Breadcrumb>)
+#endif
+                    from.Breadcrumbs);
+
+                foreach (var value in values)
+                {
+#if LACKS_CONCURRENT_COLLECTIONS
+                ((Queue<Breadcrumb>)
+#else
+                ((ConcurrentQueue<Breadcrumb>)
+#endif
+                    to.Breadcrumbs).Enqueue(value);
+                }
             }
 
             if (from.InternalExtra != null)
             {
                 foreach (var extra in from.Extra)
                 {
+#if LACKS_CONCURRENT_COLLECTIONS
+                    if (!to.Extra.ContainsKey(extra.Key))
+                    {
+                        ((Dictionary<string, object>)to.Extra).Add(extra.Key, extra.Value);
+                    }
+#else
                     ((ConcurrentDictionary<string, object>)to.Extra).TryAdd(extra.Key, extra.Value);
+#endif
                 }
             }
 
@@ -245,7 +287,14 @@ namespace Sentry
             {
                 foreach (var tag in from.Tags)
                 {
+#if LACKS_CONCURRENT_COLLECTIONS
+                    if (!to.Tags.ContainsKey(tag.Key))
+                    {
+                        ((Dictionary<string, string>)to.Tags).Add(tag.Key, tag.Value);
+                    }
+#else
                     ((ConcurrentDictionary<string, string>)to.Tags).TryAdd(tag.Key, tag.Value);
+#endif
                 }
             }
 

@@ -1,8 +1,9 @@
 using System;
+#if !LACKS_CONCURRENT_COLLECTIONS
 using System.Collections.Concurrent;
+#endif
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Threading;
 
@@ -15,6 +16,7 @@ namespace Sentry.Protocol
     [DataContract]
     public class SdkVersion
     {
+#if !LACKS_CONCURRENT_COLLECTIONS
         private readonly Lazy<ConcurrentBag<Package>> _lazyPackages =
             new Lazy<ConcurrentBag<Package>>(LazyThreadSafetyMode.PublicationOnly);
 
@@ -23,12 +25,25 @@ namespace Sentry.Protocol
             => _lazyPackages.IsValueCreated
                 ? _lazyPackages.Value
                 : null;
+#else
+        [DataMember(Name = "packages", EmitDefaultValue = false)]
+        internal List<Package> InternalPackages
+        {
+            get => InternalPackages ?? (InternalPackages = new List<Package>());
+            set => InternalPackages = value;
+        }
+#endif
 
         /// <summary>
         /// SDK packages
         /// </summary>
         /// <remarks>This property is not required</remarks>
-        public IEnumerable<Package> Packages => _lazyPackages.Value;
+        public IEnumerable<Package> Packages =>
+#if LACKS_CONCURRENT_COLLECTIONS
+            InternalPackages;
+#else
+           _lazyPackages.Value;
+#endif
 
         /// <summary>
         /// SDK name
@@ -62,6 +77,10 @@ namespace Sentry.Protocol
             => AddPackage(new Package(name, version));
 
         internal void AddPackage(Package package)
+#if !LACKS_CONCURRENT_COLLECTIONS
             => _lazyPackages.Value.Add(package);
+#else
+            => InternalPackages.Add(package);
+        #endif
     }
 }

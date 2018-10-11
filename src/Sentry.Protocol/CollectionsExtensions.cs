@@ -1,4 +1,6 @@
+#if !LACKS_CONCURRENT_COLLECTIONS
 using System.Collections.Concurrent;
+#endif
 using System.Collections.Generic;
 
 namespace Sentry.Protocol
@@ -6,20 +8,29 @@ namespace Sentry.Protocol
     internal static class CollectionsExtensions
     {
         public static TValue GetOrCreate<TValue>(
+#if !LACKS_CONCURRENT_COLLECTIONS
             this ConcurrentDictionary<string, object> dictionary,
+#else
+            this Dictionary<string, object> dictionary,
+#endif
             string key)
             where TValue : class, new()
+#if !LACKS_CONCURRENT_COLLECTIONS
             => dictionary.GetOrAdd(key, _ => new TValue()) as TValue;
-
-        public static ConcurrentQueue<T> EnqueueAll<T>(this ConcurrentQueue<T> target, IEnumerable<T> values)
+#else
         {
-            foreach (var value in values)
+            if (dictionary.TryGetValue(key, out var value))
             {
-                target.Enqueue(value);
+                return value as TValue;
             }
-
-            return target;
+            else
+            {
+                value = new TValue();
+                dictionary[key] = value;
+                return value as TValue;
+            }
         }
+#endif
 
         public static void TryCopyTo<TKey, TValue>(this IDictionary<TKey, TValue> from, IDictionary<TKey, TValue> to)
         {

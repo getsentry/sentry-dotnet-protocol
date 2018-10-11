@@ -1,4 +1,8 @@
+#if !LACKS_CONCURRENT_COLLECTIONS
 using System.Collections.Concurrent;
+#else
+using System.Collections.Generic;
+#endif
 using System.Runtime.Serialization;
 
 // ReSharper disable once CheckNamespace
@@ -10,7 +14,12 @@ namespace Sentry.Protocol
     /// <inheritdoc />
     /// <seealso href="https://docs.sentry.io/clientdev/interfaces/contexts/" />
     [DataContract]
-    public class Contexts : ConcurrentDictionary<string, object>
+    public class Contexts :
+#if !LACKS_CONCURRENT_COLLECTIONS
+        ConcurrentDictionary<string, object>
+#else
+        Dictionary<string, object>
+#endif
     {
         /// <summary>
         /// Describes the application.
@@ -85,8 +94,11 @@ namespace Sentry.Protocol
                         value = kv.Value;
                         break;
                 }
-
+#if !LACKS_CONCURRENT_COLLECTIONS
                 to.TryAdd(kv.Key, value);
+#else
+                to.Add(kv.Key, value);
+#endif
             }
         }
     }
