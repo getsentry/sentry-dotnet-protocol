@@ -12,34 +12,34 @@ namespace Sentry.Protocol
     public class SentryStackFrame
     {
         [DataMember(Name = "pre_context", EmitDefaultValue = false)]
-        internal List<string> InternalPreContext { get; private set; }
+        internal List<string>? InternalPreContext { get; private set; }
 
         [DataMember(Name = "post_context", EmitDefaultValue = false)]
-        internal List<string> InternalPostContext { get; private set; }
+        internal List<string>? InternalPostContext { get; private set; }
 
         [DataMember(Name = "vars", EmitDefaultValue = false)]
-        internal Dictionary<string, string> InternalVars { get; private set; }
+        internal Dictionary<string, string>? InternalVars { get; private set; }
 
         [DataMember(Name = "frames_omitted ", EmitDefaultValue = false)]
-        internal List<int> InternalFramesOmitted { get; private set; }
+        internal List<int>? InternalFramesOmitted { get; private set; }
 
         /// <summary>
         /// The relative file path to the call
         /// </summary>
         [DataMember(Name = "filename", EmitDefaultValue = false)]
-        public string FileName { get; set; }
+        public string? FileName { get; set; }
 
         /// <summary>
         /// The name of the function being called
         /// </summary>
         [DataMember(Name = "function", EmitDefaultValue = false)]
-        public string Function { get; set; }
+        public string? Function { get; set; }
 
         /// <summary>
         /// Platform-specific module path
         /// </summary>
         [DataMember(Name = "module", EmitDefaultValue = false)]
-        public string Module { get; set; }
+        public string? Module { get; set; }
 
         // Optional fields
 
@@ -59,23 +59,23 @@ namespace Sentry.Protocol
         /// The absolute path to filename
         /// </summary>
         [DataMember(Name = "abs_path", EmitDefaultValue = false)]
-        public string AbsolutePath { get; set; }
+        public string? AbsolutePath { get; set; }
 
         /// <summary>
         /// Source code in filename at line number
         /// </summary>
         [DataMember(Name = "context_line", EmitDefaultValue = false)]
-        public string ContextLine { get; set; }
+        public string? ContextLine { get; set; }
 
         /// <summary>
         /// A list of source code lines before context_line (in order) – usually [lineno - 5:lineno]
         /// </summary>
-        public IList<string> PreContext => InternalPreContext ?? (InternalPreContext = new List<string>());
+        public IList<string>? PreContext => InternalPreContext ?? (InternalPreContext = new List<string>());
 
         /// <summary>
         /// A list of source code lines after context_line (in order) – usually [lineno + 1:lineno + 5]
         /// </summary>
-        public IList<string> PostContext => InternalPostContext ?? (InternalPostContext = new List<string>());
+        public IList<string>? PostContext => InternalPostContext ?? (InternalPostContext = new List<string>());
 
         /// <summary>
         /// Signifies whether this frame is related to the execution of the relevant code in this stacktrace.
@@ -90,7 +90,7 @@ namespace Sentry.Protocol
         /// <summary>
         /// A mapping of variables which were available within this frame (usually context-locals).
         /// </summary>
-        public IDictionary<string, string> Vars => InternalVars ?? (InternalVars = new Dictionary<string, string>());
+        public IDictionary<string, string>? Vars => InternalVars ?? (InternalVars = new Dictionary<string, string>());
 
         /// <summary>
         /// Which frames were omitted, if any.
@@ -110,20 +110,20 @@ namespace Sentry.Protocol
         /// The assembly where the code resides
         /// </summary>
         [DataMember(Name = "package", EmitDefaultValue = false)]
-        public string Package { get; set; }
+        public string? Package { get; set; }
 
         /// <summary>
         /// This can override the platform for a single frame. Otherwise the platform of the event is assumed.
         /// </summary>
         [DataMember(Name = "platform", EmitDefaultValue = false)]
-        public string Platform { get; set; }
+        public string? Platform { get; set; }
 
         /// <summary>
         /// Optionally an address of the debug image to reference.
         /// If this is set and a known image is defined by debug_meta then symbolication can take place.
         /// </summary>
         [DataMember(Name = "image_addr", EmitDefaultValue = false)]
-        public long ImageAddress { get; set; }
+        public long? ImageAddress { get; set; }
 
         /// <summary>
         /// An optional address that points to a symbol.

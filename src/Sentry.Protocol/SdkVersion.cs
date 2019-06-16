@@ -19,7 +19,7 @@ namespace Sentry.Protocol
             new Lazy<ConcurrentBag<Package>>(LazyThreadSafetyMode.PublicationOnly);
 
         [DataMember(Name = "packages", EmitDefaultValue = false)]
-        internal ConcurrentBag<Package> InternalPackages
+        internal ConcurrentBag<Package>? InternalPackages
             => _lazyPackages.IsValueCreated
                 ? _lazyPackages.Value
                 : null;
@@ -34,7 +34,7 @@ namespace Sentry.Protocol
         /// SDK name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name
+        public string? Name
         {
             get;
             // For integrations to set their name
@@ -45,7 +45,7 @@ namespace Sentry.Protocol
         /// SDK Version
         /// </summary>
         [DataMember(Name = "version", EmitDefaultValue = false)]
-        public string Version
+        public string? Version
         {
             get;
             // For integrations to set their version

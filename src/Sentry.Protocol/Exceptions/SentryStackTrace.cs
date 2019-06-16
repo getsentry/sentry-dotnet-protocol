@@ -15,7 +15,7 @@ namespace Sentry.Protocol
     public class SentryStackTrace
     {
         [DataMember(Name = "frames", EmitDefaultValue = false)]
-        internal IList<SentryStackFrame> InternalFrames { get; private set; }
+        internal IList<SentryStackFrame>? InternalFrames { get; private set; }
 
         /// <summary>
         /// The list of frames in the stack

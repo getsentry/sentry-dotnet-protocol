@@ -22,12 +22,12 @@ namespace Sentry.Protocol
         /// The name of the runtime.
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
         /// <summary>
         /// The version identifier of the runtime.
         /// </summary>
         [DataMember(Name = "version", EmitDefaultValue = false)]
-        public string Version { get; set; }
+        public string? Version { get; set; }
         /// <summary>
         ///  An optional raw description that Sentry can use in an attempt to normalize Runtime info.
         /// </summary>
@@ -36,13 +36,13 @@ namespace Sentry.Protocol
         /// this field can be used to provide a raw system info (e.g: .NET Framework 4.7.1)
         /// </remarks>
         [DataMember(Name = "raw_description", EmitDefaultValue = false)]
-        public string RawDescription { get; set; }
+        public string? RawDescription { get; set; }
         /// <summary>
         ///  An optional build number
         /// </summary>
         /// <see href="https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed"/>
         [DataMember(Name = "build", EmitDefaultValue = false)]
-        public string Build { get; set; }
+        public string? Build { get; set; }
 
         /// <summary>
         /// Clones this instance

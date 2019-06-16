@@ -21,12 +21,12 @@ namespace Sentry.Protocol
         /// Display name of the browser application.
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
         /// <summary>
         /// Version string of the browser.
         /// </summary>
         [DataMember(Name = "version", EmitDefaultValue = false)]
-        public string Version { get; set; }
+        public string? Version { get; set; }
 
         /// <summary>
         /// Clones this instance

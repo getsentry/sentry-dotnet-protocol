@@ -19,7 +19,7 @@ namespace Sentry.Protocol
         /// The name of the thread
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string  Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Whether the crash happened on this thread.
@@ -38,6 +38,6 @@ namespace Sentry.Protocol
         /// </summary>
         /// <see href="https://docs.sentry.io/clientdev/interfaces/stacktrace/"/>
         [DataMember(Name = "stacktrace", EmitDefaultValue = false)]
-        public SentryStackTrace Stacktrace { get; set; }
+        public SentryStackTrace? Stacktrace { get; set; }
     }
 }

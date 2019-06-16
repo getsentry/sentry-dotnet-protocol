@@ -19,25 +19,25 @@ namespace Sentry.Protocol
     {
         // Default values are null so no serialization of empty objects or arrays
         [DataMember(Name = "user", EmitDefaultValue = false)]
-        internal User InternalUser { get; private set; }
+        internal User? InternalUser { get; private set; }
 
         [DataMember(Name = "contexts", EmitDefaultValue = false)]
-        internal Contexts InternalContexts { get; private set; }
+        internal Contexts? InternalContexts { get; private set; }
 
         [DataMember(Name = "request", EmitDefaultValue = false)]
-        internal Request InternalRequest { get; private set; }
+        internal Request? InternalRequest { get; private set; }
 
         [DataMember(Name = "fingerprint", EmitDefaultValue = false)]
-        internal IEnumerable<string> InternalFingerprint { get; set; }
+        internal IEnumerable<string>? InternalFingerprint { get; set; }
 
         [DataMember(Name = "breadcrumbs", EmitDefaultValue = false)]
-        internal ConcurrentQueue<Breadcrumb> InternalBreadcrumbs { get; set; }
+        internal ConcurrentQueue<Breadcrumb>? InternalBreadcrumbs { get; set; }
 
         [DataMember(Name = "extra", EmitDefaultValue = false)]
-        internal ConcurrentDictionary<string, object> InternalExtra { get; set; }
+        internal ConcurrentDictionary<string, object>? InternalExtra { get; set; }
 
         [DataMember(Name = "tags", EmitDefaultValue = false)]
-        internal ConcurrentDictionary<string, string> InternalTags { get; set; }
+        internal ConcurrentDictionary<string, string>? InternalTags { get; set; }
 
         /// <summary>
         /// An optional scope option
@@ -49,7 +49,7 @@ namespace Sentry.Protocol
         /// <returns>
         /// The options or null, if no options were defined.
         /// </returns>
-        public IScopeOptions ScopeOptions { get; }
+        public IScopeOptions? ScopeOptions { get; }
 
         /// <summary>
         /// Sentry level
@@ -67,7 +67,7 @@ namespace Sentry.Protocol
         /// (which have route template /user/{id}) are identified as the same transaction.
         /// </remarks>
         [DataMember(Name = "transaction", EmitDefaultValue = false)]
-        public string Transaction { get; set; }
+        public string? Transaction { get; set; }
 
         /// <summary>
         /// Gets or sets the HTTP.
@@ -110,7 +110,7 @@ namespace Sentry.Protocol
         /// </summary>
         /// <remarks>Requires Sentry 8.0 or higher</remarks>
         [DataMember(Name = "environment", EmitDefaultValue = false)]
-        public string Environment { get; set; }
+        public string? Environment { get; set; }
 
         /// <summary>
         /// SDK information
@@ -162,6 +162,6 @@ namespace Sentry.Protocol
         /// <summary>
         /// Creates a scope with the specified options
         /// </summary>
-        public BaseScope(IScopeOptions options) => ScopeOptions = options;
+        public BaseScope(IScopeOptions? options) => ScopeOptions = options;
     }
 }

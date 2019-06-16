@@ -26,7 +26,7 @@ namespace Sentry
         /// <summary>
         /// The optional secret key to authenticate the SDK.
         /// </summary>
-        public string SecretKey { get; }
+        public string? SecretKey { get; }
         /// <summary>
         /// The required public key to authenticate the SDK.
         /// </summary>
@@ -56,7 +56,7 @@ namespace Sentry
             SentryUri = parsed.Item6;
         }
 
-        private Dsn(string dsn, string projectId, string path, string secretKey, string publicKey, Uri sentryUri)
+        private Dsn(string dsn, string projectId, string path, string? secretKey, string publicKey, Uri sentryUri)
         {
             _dsn = dsn;
             ProjectId = projectId;
@@ -82,7 +82,7 @@ namespace Sentry
         /// <param name="dsn">The string to attempt parsing.</param>
         /// <param name="finalDsn">The <see cref="Dsn"/> when successfully parsed.</param>
         /// <returns><c>true</c> if the string is a valid <see cref="Dsn"/> as was successfully parsed. Otherwise, <c>false</c>.</returns>
-        public static bool TryParse(string dsn, out Dsn finalDsn)
+        public static bool TryParse(string dsn, out Dsn? finalDsn)
         {
             try
             {
@@ -104,7 +104,7 @@ namespace Sentry
             }
         }
 
-        private static Tuple<string, string, string, string, string, Uri> Parse(string dsn, bool throwOnError)
+        private static Tuple<string, string, string, string?, string, Uri>? Parse(string dsn, bool throwOnError)
         {
             Uri uri;
             if (throwOnError)
@@ -141,7 +141,7 @@ namespace Sentry
                 return null;
             }
 
-            string secretKey = null;
+            string? secretKey = null;
             if (keys.Length > 1)
             {
                 secretKey = keys[1];

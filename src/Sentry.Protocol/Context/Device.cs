@@ -12,7 +12,7 @@ namespace Sentry.Protocol
     public class Device
     {
         [DataMember(Name = "timezone", EmitDefaultValue = false)]
-        private string TimezoneSerializable => Timezone?.Id;
+        private string? TimezoneSerializable => Timezone?.Id;
 
         /// <summary>
         /// Tells Sentry which type of context this is.
@@ -23,17 +23,17 @@ namespace Sentry.Protocol
         /// The name of the device. This is typically a hostname.
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
         /// <summary>
         /// The manufacturer of the device
         /// </summary>
         [DataMember(Name = "manufacturer", EmitDefaultValue = false)]
-        public string Manufacturer { get; set; }
+        public string? Manufacturer { get; set; }
         /// <summary>
         /// The brand of the device
         /// </summary>
         [DataMember(Name = "brand", EmitDefaultValue = false)]
-        public string Brand { get; set; }
+        public string? Brand { get; set; }
         /// <summary>
         /// The family of the device.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Sentry.Protocol
         /// iPhone, Samsung Galaxy
         /// </example>
         [DataMember(Name = "family", EmitDefaultValue = false)]
-        public string Family { get; set; }
+        public string? Family { get; set; }
         /// <summary>
         /// The model name.
         /// </summary>
@@ -52,17 +52,17 @@ namespace Sentry.Protocol
         /// Samsung Galaxy S3
         /// </example>
         [DataMember(Name = "model", EmitDefaultValue = false)]
-        public string Model { get; set; }
+        public string? Model { get; set; }
         /// <summary>
         /// An internal hardware revision to identify the device exactly.
         /// </summary>
         [DataMember(Name = "model_id", EmitDefaultValue = false)]
-        public string ModelId { get; set; }
+        public string? ModelId { get; set; }
         /// <summary>
         /// The CPU architecture.
         /// </summary>
         [DataMember(Name = "arch", EmitDefaultValue = false)]
-        public string Architecture { get; set; }
+        public string? Architecture { get; set; }
         /// <summary>
         /// If the device has a battery an integer defining the battery level (in the range 0-100).
         /// </summary>
@@ -135,7 +135,7 @@ namespace Sentry.Protocol
         /// 800x600
         /// </example>
         [DataMember(Name = "screen_resolution", EmitDefaultValue = false)]
-        public string ScreenResolution { get; set; }
+        public string? ScreenResolution { get; set; }
         /// <summary>
         /// The logical density of the display.
         /// </summary>
@@ -160,7 +160,7 @@ namespace Sentry.Protocol
         /// <example>
         /// Europe/Vienna
         /// </example>
-        public TimeZoneInfo Timezone { get; set; }
+        public TimeZoneInfo? Timezone { get; set; }
 
         /// <summary>
         /// Clones this instance

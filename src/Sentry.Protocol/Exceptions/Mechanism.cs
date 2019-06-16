@@ -17,10 +17,10 @@ namespace Sentry.Protocol
     public class Mechanism
     {
         [DataMember(Name = "data", EmitDefaultValue = false)]
-        internal Dictionary<string, object> InternalData { get; private set; }
+        internal Dictionary<string, object>? InternalData { get; private set; }
 
         [DataMember(Name = "meta", EmitDefaultValue = false)]
-        internal Dictionary<string, object> InternalMeta { get; private set; }
+        internal Dictionary<string, object>? InternalMeta { get; private set; }
 
         /// <summary>
         /// Required unique identifier of this mechanism determining rendering and processing of the mechanism data
@@ -31,19 +31,19 @@ namespace Sentry.Protocol
         /// In this case, set the type to "generic". See below for an example.
         /// </remarks>
         [DataMember(Name = "type", EmitDefaultValue = false)]
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// Optional human readable description of the error mechanism and a possible hint on how to solve this error
         /// </summary>
         [DataMember(Name = "description", EmitDefaultValue = false)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Optional fully qualified URL to an online help resource, possible interpolated with error parameters
         /// </summary>
         [DataMember(Name = "help_link", EmitDefaultValue = false)]
-        public string HelpLink { get; set; }
+        public string? HelpLink { get; set; }
 
         /// <summary>
         /// Optional flag indicating whether the exception has been handled by the user (e.g. via try..catch)

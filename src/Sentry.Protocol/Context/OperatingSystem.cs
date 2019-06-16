@@ -22,12 +22,12 @@ namespace Sentry.Protocol
         /// The name of the operating system.
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
         /// <summary>
         /// The version of the operating system.
         /// </summary>
         [DataMember(Name = "version", EmitDefaultValue = false)]
-        public string Version { get; set; }
+        public string? Version { get; set; }
         /// <summary>
         /// An optional raw description that Sentry can use in an attempt to normalize OS info.
         /// </summary>
@@ -36,18 +36,18 @@ namespace Sentry.Protocol
         /// this field can be used to provide a raw system info (e.g: uname)
         /// </remarks>
         [DataMember(Name = "raw_description", EmitDefaultValue = false)]
-        public string RawDescription { get; set; }
+        public string? RawDescription { get; set; }
         /// <summary>
         /// The internal build revision of the operating system.
         /// </summary>
         [DataMember(Name = "build", EmitDefaultValue = false)]
-        public string Build { get; set; }
+        public string? Build { get; set; }
         /// <summary>
         ///  If known, this can be an independent kernel version string. Typically
         /// this is something like the entire output of the 'uname' tool.
         /// </summary>
         [DataMember(Name = "kernel_version", EmitDefaultValue = false)]
-        public string KernelVersion { get; set; }
+        public string? KernelVersion { get; set; }
         /// <summary>
         ///  An optional boolean that defines if the OS has been jailbroken or rooted.
         /// </summary>

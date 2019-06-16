@@ -43,7 +43,7 @@ namespace Sentry
                     in (string, string)? dataPair = null,
                     BreadcrumbLevel level = default)
         {
-            Dictionary<string, string> data = null;
+            Dictionary<string, string>? data = null;
             if (dataPair != null)
             {
                 data = new Dictionary<string, string>
@@ -74,9 +74,9 @@ namespace Sentry
         public static void AddBreadcrumb(
             this BaseScope scope,
             string message,
-            string category = null,
-            string type = null,
-            Dictionary<string, string> data = null,
+            string? category = null,
+            string? type = null,
+            Dictionary<string, string>? data = null,
             BreadcrumbLevel level = default)
         {
             scope.AddBreadcrumb(
@@ -105,10 +105,10 @@ namespace Sentry
         public static void AddBreadcrumb(
             this BaseScope scope,
             DateTimeOffset? timestamp,
-            string message,
-            string category = null,
-            string type = null,
-            IReadOnlyDictionary<string, string> data = null,
+            string? message,
+            string? category = null,
+            string? type = null,
+            IReadOnlyDictionary<string, string>? data = null,
             BreadcrumbLevel level = default)
             => scope.AddBreadcrumb(new Breadcrumb(
                 timestamp: timestamp,
@@ -321,7 +321,7 @@ namespace Sentry
                         scope.SetTags(keyValStringObject
                             .Select(k => new KeyValuePair<string, string>(
                                 k.Key,
-                                k.Value?.ToString()))
+                                k.Value.ToString()))
                             .Where(kv => !string.IsNullOrEmpty(kv.Value)));
 
                         break;

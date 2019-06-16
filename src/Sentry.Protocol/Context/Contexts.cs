@@ -66,7 +66,7 @@ namespace Sentry.Protocol
 
             foreach (var kv in this)
             {
-                object value;
+                object? value;
                 switch (kv.Key)
                 {
                     case App.Type:
@@ -91,6 +91,11 @@ namespace Sentry.Protocol
                     default:
                         value = kv.Value;
                         break;
+                }
+
+                if (value == null)
+                {
+                    value = kv.Value;
                 }
 
                 to.TryAdd(kv.Key, value);

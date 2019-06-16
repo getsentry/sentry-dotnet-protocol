@@ -13,25 +13,25 @@ namespace Sentry.Protocol
     {
         // Not serialized since not part of the protocol yet.
         // Used by Sentry SDK though to transfer data from Exception.Data to Event.Data when parsing.
-        internal Dictionary<string, object> InternalData { get; private set; }
+        internal Dictionary<string, object>? InternalData { get; private set; }
 
         /// <summary>
         /// Exception Type
         /// </summary>
         [DataMember(Name = "type", EmitDefaultValue = false)]
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// The exception value
         /// </summary>
         [DataMember(Name = "value", EmitDefaultValue = false)]
-        public string Value { get; set; }
+        public string? Value { get; set; }
 
         /// <summary>
         /// The optional module, or package which the exception type lives in
         /// </summary>
         [DataMember(Name = "module", EmitDefaultValue = false)]
-        public string Module { get; set; }
+        public string? Module { get; set; }
 
         /// <summary>
         /// An optional value which refers to a thread in the threads interface.
@@ -39,21 +39,21 @@ namespace Sentry.Protocol
         /// <seealso href="https://docs.sentry.io/clientdev/interfaces/threads/"/>
         /// <seealso cref="SentryThread"/>
         [DataMember(Name = "thread_id", EmitDefaultValue = false)]
-        public int ThreadId { get; set; }
+        public int? ThreadId { get; set; }
 
         /// <summary>
         /// Stack trace
         /// </summary>
         /// <see href="https://docs.sentry.io/clientdev/interfaces/stacktrace/"/>
         [DataMember(Name = "stacktrace", EmitDefaultValue = false)]
-        public SentryStackTrace Stacktrace { get; set; }
+        public SentryStackTrace? Stacktrace { get; set; }
 
         /// <summary>
         /// An optional mechanism that created this exception.
         /// </summary>
         /// <see href="https://docs.sentry.io/clientdev/interfaces/mechanism/"/>
         [DataMember(Name = "mechanism", EmitDefaultValue = false)]
-        public Mechanism Mechanism { get; set; }
+        public Mechanism? Mechanism { get; set; }
 
         /// <summary>
         /// Arbitrary extra data that related to this error
@@ -63,6 +63,6 @@ namespace Sentry.Protocol
         /// For this reason this property is not serialized.
         /// The data is moved to the event level on Extra until such support is added
         /// </remarks>
-        public IDictionary<string, object> Data => InternalData ?? (InternalData = new Dictionary<string, object>());
+        public IDictionary<string, object>? Data => InternalData ?? (InternalData = new Dictionary<string, object>());
     }
 }

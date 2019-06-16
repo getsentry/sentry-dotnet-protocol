@@ -24,7 +24,7 @@ namespace Sentry.Protocol
         /// Samsung S7: Mali-T880
         /// </example>
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// The PCI Id of the graphics device
@@ -53,7 +53,7 @@ namespace Sentry.Protocol
         /// Apple, ARM, WebKit
         /// </example>
         [DataMember(Name = "vendor_name", EmitDefaultValue = false)]
-        public string VendorName { get; set; }
+        public string? VendorName { get; set; }
 
         /// <summary>
         /// Total GPU memory available in mega-bytes.
@@ -67,7 +67,7 @@ namespace Sentry.Protocol
         /// <remarks>The low level API used</remarks>
         /// <example>Metal, Direct3D11, OpenGLES3, PlayStation4, XboxOne</example>
         [DataMember(Name = "api_type", EmitDefaultValue = false)]
-        public string ApiType { get; set; }
+        public string? ApiType { get; set; }
 
         /// <summary>
         /// Whether the GPU is multi-threaded rendering or not.
@@ -85,7 +85,7 @@ namespace Sentry.Protocol
         /// OpenGL 2.0, Direct3D 9.0c
         /// </example>
         [DataMember(Name = "version", EmitDefaultValue = false)]
-        public string Version { get; set; }
+        public string? Version { get; set; }
 
         /// <summary>
         /// The Non-Power-Of-Two support level
@@ -94,7 +94,7 @@ namespace Sentry.Protocol
         /// Full
         /// </example>
         [DataMember(Name = "npot_support", EmitDefaultValue = false)]
-        public string NpotSupport { get; set; }
+        public string? NpotSupport { get; set; }
 
         /// <summary>
         /// Clones this instance

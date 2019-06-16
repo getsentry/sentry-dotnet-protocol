@@ -26,18 +26,18 @@ namespace Sentry.Protocol
         /// Must be no more than 1000 characters in length.
         /// </remarks>
         [DataMember(Name = "message", EmitDefaultValue = false)]
-        public string Message { get; set; }
+        public string? Message { get; set; }
 
         /// <summary>
         /// The optional list of formatting parameters
         /// </summary>
         [DataMember(Name = "params", EmitDefaultValue = false)]
-        public IEnumerable<object> Params { get; set; }
+        public IEnumerable<object>? Params { get; set; }
 
         /// <summary>
         /// The formatted message
         /// </summary>
         [DataMember(Name = "formatted", EmitDefaultValue = false)]
-        public string Formatted { get; set; }
+        public string? Formatted { get; set; }
     }
 }
