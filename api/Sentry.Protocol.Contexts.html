@@ -1,0 +1,521 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Contexts
+   | Sentry .NET </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Contexts
+   | Sentry .NET ">
+    <meta name="generator" content="docfx 2.42.4.0">
+    
+    <link rel="shortcut icon" href="../images/sentry.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Sentry.Protocol.Contexts">
+  
+  
+  <h1 id="Sentry_Protocol_Contexts" data-uid="Sentry.Protocol.Contexts" class="text-break">Class Contexts
+  </h1>
+  <div class="markdown level0 summary"><p>Represents Sentry's structured Context</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">ConcurrentDictionary</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a>&gt;</div>
+    <div class="level2"><span class="xref">Contexts</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a>&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a>&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a>&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a>&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a>&gt;&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.idictionary">IDictionary</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.icollection">ICollection</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Collections.Concurrent.ConcurrentDictionary&lt;System.String, System.Object&gt;.System.Collections.IDictionary.get_Item(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Concurrent.ConcurrentDictionary&lt;System.String, System.Object&gt;.System.Collections.IDictionary.set_Item(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.addorupdate#System_Collections_Concurrent_ConcurrentDictionary_2_AddOrUpdate__0__1_System_Func__0__1__1__">ConcurrentDictionary&lt;String, Object&gt;.AddOrUpdate(String, Object, Func&lt;String, Object, Object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.addorupdate#System_Collections_Concurrent_ConcurrentDictionary_2_AddOrUpdate__0_System_Func__0__1__System_Func__0__1__1__">ConcurrentDictionary&lt;String, Object&gt;.AddOrUpdate(String, Func&lt;String, Object&gt;, Func&lt;String, Object, Object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.clear#System_Collections_Concurrent_ConcurrentDictionary_2_Clear">ConcurrentDictionary&lt;String, Object&gt;.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.containskey#System_Collections_Concurrent_ConcurrentDictionary_2_ContainsKey__0_">ConcurrentDictionary&lt;String, Object&gt;.ContainsKey(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.getenumerator#System_Collections_Concurrent_ConcurrentDictionary_2_GetEnumerator">ConcurrentDictionary&lt;String, Object&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.getoradd#System_Collections_Concurrent_ConcurrentDictionary_2_GetOrAdd__0__1_">ConcurrentDictionary&lt;String, Object&gt;.GetOrAdd(String, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.getoradd#System_Collections_Concurrent_ConcurrentDictionary_2_GetOrAdd__0_System_Func__0__1__">ConcurrentDictionary&lt;String, Object&gt;.GetOrAdd(String, Func&lt;String, Object&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Concurrent.ConcurrentDictionary&lt;System.String, System.Object&gt;.System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.String, System.Object&gt;&gt;.Add(System.Collections.Generic.KeyValuePair&lt;System.String, System.Object&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Concurrent.ConcurrentDictionary&lt;System.String, System.Object&gt;.System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.String, System.Object&gt;&gt;.Contains(System.Collections.Generic.KeyValuePair&lt;System.String, System.Object&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Concurrent.ConcurrentDictionary&lt;System.String, System.Object&gt;.System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.String, System.Object&gt;&gt;.CopyTo(System.Collections.Generic.KeyValuePair&lt;System.String, System.Object&gt;[], System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Concurrent.ConcurrentDictionary&lt;System.String, System.Object&gt;.System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.String, System.Object&gt;&gt;.Remove(System.Collections.Generic.KeyValuePair&lt;System.String, System.Object&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Concurrent.ConcurrentDictionary&lt;System.String, System.Object&gt;.System.Collections.Generic.IDictionary&lt;System.String, System.Object&gt;.Add(System.String, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Concurrent.ConcurrentDictionary&lt;System.String, System.Object&gt;.System.Collections.Generic.IDictionary&lt;System.String, System.Object&gt;.Remove(System.String)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.system-collections-icollection-copyto#System_Collections_Concurrent_ConcurrentDictionary_2_System_Collections_ICollection_CopyTo_System_Array_System_Int32_">ConcurrentDictionary&lt;String, Object&gt;.ICollection.CopyTo(Array, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.system-collections-idictionary-add#System_Collections_Concurrent_ConcurrentDictionary_2_System_Collections_IDictionary_Add_System_Object_System_Object_">ConcurrentDictionary&lt;String, Object&gt;.IDictionary.Add(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.system-collections-idictionary-contains#System_Collections_Concurrent_ConcurrentDictionary_2_System_Collections_IDictionary_Contains_System_Object_">ConcurrentDictionary&lt;String, Object&gt;.IDictionary.Contains(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.system-collections-idictionary-getenumerator#System_Collections_Concurrent_ConcurrentDictionary_2_System_Collections_IDictionary_GetEnumerator">ConcurrentDictionary&lt;String, Object&gt;.IDictionary.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.system-collections-idictionary-remove#System_Collections_Concurrent_ConcurrentDictionary_2_System_Collections_IDictionary_Remove_System_Object_">ConcurrentDictionary&lt;String, Object&gt;.IDictionary.Remove(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.system-collections-ienumerable-getenumerator#System_Collections_Concurrent_ConcurrentDictionary_2_System_Collections_IEnumerable_GetEnumerator">ConcurrentDictionary&lt;String, Object&gt;.IEnumerable.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.toarray#System_Collections_Concurrent_ConcurrentDictionary_2_ToArray">ConcurrentDictionary&lt;String, Object&gt;.ToArray()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.tryadd#System_Collections_Concurrent_ConcurrentDictionary_2_TryAdd__0__1_">ConcurrentDictionary&lt;String, Object&gt;.TryAdd(String, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.trygetvalue#System_Collections_Concurrent_ConcurrentDictionary_2_TryGetValue__0__1__">ConcurrentDictionary&lt;String, Object&gt;.TryGetValue(String, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.tryremove#System_Collections_Concurrent_ConcurrentDictionary_2_TryRemove__0__1__">ConcurrentDictionary&lt;String, Object&gt;.TryRemove(String, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.tryupdate#System_Collections_Concurrent_ConcurrentDictionary_2_TryUpdate__0__1__1_">ConcurrentDictionary&lt;String, Object&gt;.TryUpdate(String, Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.count#System_Collections_Concurrent_ConcurrentDictionary_2_Count">ConcurrentDictionary&lt;String, Object&gt;.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.isempty#System_Collections_Concurrent_ConcurrentDictionary_2_IsEmpty">ConcurrentDictionary&lt;String, Object&gt;.IsEmpty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.item#System_Collections_Concurrent_ConcurrentDictionary_2_Item__0_">ConcurrentDictionary&lt;String, Object&gt;.Item[String]</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.keys#System_Collections_Concurrent_ConcurrentDictionary_2_Keys">ConcurrentDictionary&lt;String, Object&gt;.Keys</a>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Concurrent.ConcurrentDictionary&lt;System.String, System.Object&gt;.System.Collections.Generic.ICollection&lt;System.Collections.Generic.KeyValuePair&lt;System.String, System.Object&gt;&gt;.IsReadOnly</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Concurrent.ConcurrentDictionary&lt;System.String, System.Object&gt;.System.Collections.Generic.IReadOnlyDictionary&lt;System.String, System.Object&gt;.Keys</span>
+    </div>
+    <div>
+      <span class="xref">System.Collections.Concurrent.ConcurrentDictionary&lt;System.String, System.Object&gt;.System.Collections.Generic.IReadOnlyDictionary&lt;System.String, System.Object&gt;.Values</span>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.system-collections-icollection-issynchronized#System_Collections_Concurrent_ConcurrentDictionary_2_System_Collections_ICollection_IsSynchronized">ConcurrentDictionary&lt;String, Object&gt;.ICollection.IsSynchronized</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.system-collections-icollection-syncroot#System_Collections_Concurrent_ConcurrentDictionary_2_System_Collections_ICollection_SyncRoot">ConcurrentDictionary&lt;String, Object&gt;.ICollection.SyncRoot</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.system-collections-idictionary-isfixedsize#System_Collections_Concurrent_ConcurrentDictionary_2_System_Collections_IDictionary_IsFixedSize">ConcurrentDictionary&lt;String, Object&gt;.IDictionary.IsFixedSize</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.system-collections-idictionary-isreadonly#System_Collections_Concurrent_ConcurrentDictionary_2_System_Collections_IDictionary_IsReadOnly">ConcurrentDictionary&lt;String, Object&gt;.IDictionary.IsReadOnly</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.system-collections-idictionary-item#System_Collections_Concurrent_ConcurrentDictionary_2_System_Collections_IDictionary_Item_System_Object_">ConcurrentDictionary&lt;String, Object&gt;.IDictionary.Item[Object]</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.system-collections-idictionary-keys#System_Collections_Concurrent_ConcurrentDictionary_2_System_Collections_IDictionary_Keys">ConcurrentDictionary&lt;String, Object&gt;.IDictionary.Keys</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.system-collections-idictionary-values#System_Collections_Concurrent_ConcurrentDictionary_2_System_Collections_IDictionary_Values">ConcurrentDictionary&lt;String, Object&gt;.IDictionary.Values</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2.values#System_Collections_Concurrent_ConcurrentDictionary_2_Values">ConcurrentDictionary&lt;String, Object&gt;.Values</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Sentry.Protocol.html">Sentry.Protocol</a></h6>
+  <h6><strong>Assembly</strong>: Sentry.Protocol.dll</h6>
+  <h5 id="Sentry_Protocol_Contexts_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DataContract]
+public class Contexts : ConcurrentDictionary&lt;string, object&gt;, IDictionary&lt;string, object&gt;, ICollection&lt;KeyValuePair&lt;string, object&gt;&gt;, IReadOnlyDictionary&lt;string, object&gt;, IReadOnlyCollection&lt;KeyValuePair&lt;string, object&gt;&gt;, IEnumerable&lt;KeyValuePair&lt;string, object&gt;&gt;, IDictionary, ICollection, IEnumerable</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_Contexts_App.md&amp;value=---%0Auid%3A%20Sentry.Protocol.Contexts.App%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Context/Contexts.cs/#L18">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_Contexts_App_" data-uid="Sentry.Protocol.Contexts.App*"></a>
+  <h4 id="Sentry_Protocol_Contexts_App" data-uid="Sentry.Protocol.Contexts.App">App</h4>
+  <div class="markdown level1 summary"><p>Describes the application.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public App App { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sentry.Protocol.App.html">App</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_Contexts_Browser.md&amp;value=---%0Auid%3A%20Sentry.Protocol.Contexts.Browser%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Context/Contexts.cs/#L22">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_Contexts_Browser_" data-uid="Sentry.Protocol.Contexts.Browser*"></a>
+  <h4 id="Sentry_Protocol_Contexts_Browser" data-uid="Sentry.Protocol.Contexts.Browser">Browser</h4>
+  <div class="markdown level1 summary"><p>Describes the browser.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Browser Browser { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sentry.Protocol.Browser.html">Browser</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_Contexts_Device.md&amp;value=---%0Auid%3A%20Sentry.Protocol.Contexts.Device%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Context/Contexts.cs/#L26">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_Contexts_Device_" data-uid="Sentry.Protocol.Contexts.Device*"></a>
+  <h4 id="Sentry_Protocol_Contexts_Device" data-uid="Sentry.Protocol.Contexts.Device">Device</h4>
+  <div class="markdown level1 summary"><p>Describes the device.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Device Device { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sentry.Protocol.Device.html">Device</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_Contexts_Gpu.md&amp;value=---%0Auid%3A%20Sentry.Protocol.Contexts.Gpu%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Context/Contexts.cs/#L41">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_Contexts_Gpu_" data-uid="Sentry.Protocol.Contexts.Gpu*"></a>
+  <h4 id="Sentry_Protocol_Contexts_Gpu" data-uid="Sentry.Protocol.Contexts.Gpu">Gpu</h4>
+  <div class="markdown level1 summary"><p>This describes a GPU of the device..</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Gpu Gpu { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sentry.Protocol.Gpu.html">Gpu</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_Contexts_OperatingSystem.md&amp;value=---%0Auid%3A%20Sentry.Protocol.Contexts.OperatingSystem%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Context/Contexts.cs/#L33">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_Contexts_OperatingSystem_" data-uid="Sentry.Protocol.Contexts.OperatingSystem*"></a>
+  <h4 id="Sentry_Protocol_Contexts_OperatingSystem" data-uid="Sentry.Protocol.Contexts.OperatingSystem">OperatingSystem</h4>
+  <div class="markdown level1 summary"><p>Defines the operating system.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OperatingSystem OperatingSystem { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sentry.Protocol.OperatingSystem.html">OperatingSystem</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Sentry_Protocol_Contexts_OperatingSystem_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>In web contexts, this is the operating system of the browser (normally pulled from the User-Agent string).</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_Contexts_Runtime.md&amp;value=---%0Auid%3A%20Sentry.Protocol.Contexts.Runtime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Context/Contexts.cs/#L37">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_Contexts_Runtime_" data-uid="Sentry.Protocol.Contexts.Runtime*"></a>
+  <h4 id="Sentry_Protocol_Contexts_Runtime" data-uid="Sentry.Protocol.Contexts.Runtime">Runtime</h4>
+  <div class="markdown level1 summary"><p>This describes a runtime in more detail.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Runtime Runtime { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Sentry.Protocol.Runtime.html">Runtime</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">System.Collections.Generic.IDictionary&lt;TKey,TValue&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icollection-1">System.Collections.Generic.ICollection&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">System.Collections.Generic.IReadOnlyDictionary&lt;TKey,TValue&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">System.Collections.Generic.IReadOnlyCollection&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.idictionary">System.Collections.IDictionary</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.icollection">System.Collections.ICollection</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><span><a href="https://docs.sentry.io/clientdev/interfaces/contexts/">https://docs.sentry.io/clientdev/interfaces/contexts/</a></span></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_Contexts.md&amp;value=---%0Auid%3A%20Sentry.Protocol.Contexts%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Context/Contexts.cs/#L12" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

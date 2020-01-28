@@ -1,0 +1,727 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SentryStackFrame
+   | Sentry .NET </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SentryStackFrame
+   | Sentry .NET ">
+    <meta name="generator" content="docfx 2.42.4.0">
+    
+    <link rel="shortcut icon" href="../images/sentry.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Sentry.Protocol.SentryStackFrame">
+  
+  
+  <h1 id="Sentry_Protocol_SentryStackFrame" data-uid="Sentry.Protocol.SentryStackFrame" class="text-break">Class SentryStackFrame
+  </h1>
+  <div class="markdown level0 summary"><p>A frame of a stacktrace</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">SentryStackFrame</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Sentry.Protocol.html">Sentry.Protocol</a></h6>
+  <h6><strong>Assembly</strong>: Sentry.Protocol.dll</h6>
+  <h5 id="Sentry_Protocol_SentryStackFrame_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DataContract]
+public class SentryStackFrame</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_SentryStackFrame_AbsolutePath.md&amp;value=---%0Auid%3A%20Sentry.Protocol.SentryStackFrame.AbsolutePath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Exceptions/SentryStackFrame.cs/#L61">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_SentryStackFrame_AbsolutePath_" data-uid="Sentry.Protocol.SentryStackFrame.AbsolutePath*"></a>
+  <h4 id="Sentry_Protocol_SentryStackFrame_AbsolutePath" data-uid="Sentry.Protocol.SentryStackFrame.AbsolutePath">AbsolutePath</h4>
+  <div class="markdown level1 summary"><p>The absolute path to filename</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;abs_path&quot;, EmitDefaultValue = false)]
+public string AbsolutePath { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_SentryStackFrame_ColumnNumber.md&amp;value=---%0Auid%3A%20Sentry.Protocol.SentryStackFrame.ColumnNumber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Exceptions/SentryStackFrame.cs/#L55">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_SentryStackFrame_ColumnNumber_" data-uid="Sentry.Protocol.SentryStackFrame.ColumnNumber*"></a>
+  <h4 id="Sentry_Protocol_SentryStackFrame_ColumnNumber" data-uid="Sentry.Protocol.SentryStackFrame.ColumnNumber">ColumnNumber</h4>
+  <div class="markdown level1 summary"><p>The column number of the call</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;colno&quot;, EmitDefaultValue = false)]
+public int? ColumnNumber { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_SentryStackFrame_ContextLine.md&amp;value=---%0Auid%3A%20Sentry.Protocol.SentryStackFrame.ContextLine%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Exceptions/SentryStackFrame.cs/#L67">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_SentryStackFrame_ContextLine_" data-uid="Sentry.Protocol.SentryStackFrame.ContextLine*"></a>
+  <h4 id="Sentry_Protocol_SentryStackFrame_ContextLine" data-uid="Sentry.Protocol.SentryStackFrame.ContextLine">ContextLine</h4>
+  <div class="markdown level1 summary"><p>Source code in filename at line number</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;context_line&quot;, EmitDefaultValue = false)]
+public string ContextLine { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_SentryStackFrame_FileName.md&amp;value=---%0Auid%3A%20Sentry.Protocol.SentryStackFrame.FileName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Exceptions/SentryStackFrame.cs/#L29">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_SentryStackFrame_FileName_" data-uid="Sentry.Protocol.SentryStackFrame.FileName*"></a>
+  <h4 id="Sentry_Protocol_SentryStackFrame_FileName" data-uid="Sentry.Protocol.SentryStackFrame.FileName">FileName</h4>
+  <div class="markdown level1 summary"><p>The relative file path to the call</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;filename&quot;, EmitDefaultValue = false)]
+public string FileName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_SentryStackFrame_FramesOmitted.md&amp;value=---%0Auid%3A%20Sentry.Protocol.SentryStackFrame.FramesOmitted%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Exceptions/SentryStackFrame.cs/#L107">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_SentryStackFrame_FramesOmitted_" data-uid="Sentry.Protocol.SentryStackFrame.FramesOmitted*"></a>
+  <h4 id="Sentry_Protocol_SentryStackFrame_FramesOmitted" data-uid="Sentry.Protocol.SentryStackFrame.FramesOmitted">FramesOmitted</h4>
+  <div class="markdown level1 summary"><p>Which frames were omitted, if any.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IList&lt;int&gt; FramesOmitted { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Sentry_Protocol_SentryStackFrame_FramesOmitted_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the list of frames is large, you can explicitly tell the system that you’ve omitted a range of frames.
+The frames_omitted must be a single tuple two values: start and end.</p>
+</div>
+  <h5 id="Sentry_Protocol_SentryStackFrame_FramesOmitted_examples">Examples</h5>
+  <p>If you only removed the 8th frame, the value would be (8, 9), meaning it started at the 8th frame,
+and went until the 9th (the number of frames omitted is end-start).
+The values should be based on a one-index.</p>
+
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_SentryStackFrame_Function.md&amp;value=---%0Auid%3A%20Sentry.Protocol.SentryStackFrame.Function%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Exceptions/SentryStackFrame.cs/#L35">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_SentryStackFrame_Function_" data-uid="Sentry.Protocol.SentryStackFrame.Function*"></a>
+  <h4 id="Sentry_Protocol_SentryStackFrame_Function" data-uid="Sentry.Protocol.SentryStackFrame.Function">Function</h4>
+  <div class="markdown level1 summary"><p>The name of the function being called</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;function&quot;, EmitDefaultValue = false)]
+public string Function { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_SentryStackFrame_ImageAddress.md&amp;value=---%0Auid%3A%20Sentry.Protocol.SentryStackFrame.ImageAddress%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Exceptions/SentryStackFrame.cs/#L125">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_SentryStackFrame_ImageAddress_" data-uid="Sentry.Protocol.SentryStackFrame.ImageAddress*"></a>
+  <h4 id="Sentry_Protocol_SentryStackFrame_ImageAddress" data-uid="Sentry.Protocol.SentryStackFrame.ImageAddress">ImageAddress</h4>
+  <div class="markdown level1 summary"><p>Optionally an address of the debug image to reference.
+If this is set and a known image is defined by debug_meta then symbolication can take place.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;image_addr&quot;, EmitDefaultValue = false)]
+public long ImageAddress { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_SentryStackFrame_InApp.md&amp;value=---%0Auid%3A%20Sentry.Protocol.SentryStackFrame.InApp%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Exceptions/SentryStackFrame.cs/#L87">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_SentryStackFrame_InApp_" data-uid="Sentry.Protocol.SentryStackFrame.InApp*"></a>
+  <h4 id="Sentry_Protocol_SentryStackFrame_InApp" data-uid="Sentry.Protocol.SentryStackFrame.InApp">InApp</h4>
+  <div class="markdown level1 summary"><p>Signifies whether this frame is related to the execution of the relevant code in this stacktrace.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;in_app&quot;, EmitDefaultValue = false)]
+public bool? InApp { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Sentry_Protocol_SentryStackFrame_InApp_examples">Examples</h5>
+  <p>For example, the frames that might power the framework’s web server of your app are probably not relevant,
+however calls to the framework’s library once you start handling code likely are.</p>
+
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_SentryStackFrame_InstructionOffset.md&amp;value=---%0Auid%3A%20Sentry.Protocol.SentryStackFrame.InstructionOffset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Exceptions/SentryStackFrame.cs/#L142">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_SentryStackFrame_InstructionOffset_" data-uid="Sentry.Protocol.SentryStackFrame.InstructionOffset*"></a>
+  <h4 id="Sentry_Protocol_SentryStackFrame_InstructionOffset" data-uid="Sentry.Protocol.SentryStackFrame.InstructionOffset">InstructionOffset</h4>
+  <div class="markdown level1 summary"><p>The instruction offset</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;instruction_offset&quot;, EmitDefaultValue = false)]
+public long? InstructionOffset { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Sentry_Protocol_SentryStackFrame_InstructionOffset_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The official docs refer to it as 'The difference between instruction address and symbol address in bytes.'
+In .NET this means the IL Offset within the assembly</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_SentryStackFrame_LineNumber.md&amp;value=---%0Auid%3A%20Sentry.Protocol.SentryStackFrame.LineNumber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Exceptions/SentryStackFrame.cs/#L49">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_SentryStackFrame_LineNumber_" data-uid="Sentry.Protocol.SentryStackFrame.LineNumber*"></a>
+  <h4 id="Sentry_Protocol_SentryStackFrame_LineNumber" data-uid="Sentry.Protocol.SentryStackFrame.LineNumber">LineNumber</h4>
+  <div class="markdown level1 summary"><p>The line number of the call</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;lineno&quot;, EmitDefaultValue = false)]
+public int? LineNumber { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_SentryStackFrame_Module.md&amp;value=---%0Auid%3A%20Sentry.Protocol.SentryStackFrame.Module%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Exceptions/SentryStackFrame.cs/#L41">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_SentryStackFrame_Module_" data-uid="Sentry.Protocol.SentryStackFrame.Module*"></a>
+  <h4 id="Sentry_Protocol_SentryStackFrame_Module" data-uid="Sentry.Protocol.SentryStackFrame.Module">Module</h4>
+  <div class="markdown level1 summary"><p>Platform-specific module path</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;module&quot;, EmitDefaultValue = false)]
+public string Module { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_SentryStackFrame_Package.md&amp;value=---%0Auid%3A%20Sentry.Protocol.SentryStackFrame.Package%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Exceptions/SentryStackFrame.cs/#L112">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_SentryStackFrame_Package_" data-uid="Sentry.Protocol.SentryStackFrame.Package*"></a>
+  <h4 id="Sentry_Protocol_SentryStackFrame_Package" data-uid="Sentry.Protocol.SentryStackFrame.Package">Package</h4>
+  <div class="markdown level1 summary"><p>The assembly where the code resides</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;package&quot;, EmitDefaultValue = false)]
+public string Package { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_SentryStackFrame_Platform.md&amp;value=---%0Auid%3A%20Sentry.Protocol.SentryStackFrame.Platform%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Exceptions/SentryStackFrame.cs/#L118">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_SentryStackFrame_Platform_" data-uid="Sentry.Protocol.SentryStackFrame.Platform*"></a>
+  <h4 id="Sentry_Protocol_SentryStackFrame_Platform" data-uid="Sentry.Protocol.SentryStackFrame.Platform">Platform</h4>
+  <div class="markdown level1 summary"><p>This can override the platform for a single frame. Otherwise the platform of the event is assumed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;platform&quot;, EmitDefaultValue = false)]
+public string Platform { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_SentryStackFrame_PostContext.md&amp;value=---%0Auid%3A%20Sentry.Protocol.SentryStackFrame.PostContext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Exceptions/SentryStackFrame.cs/#L78">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_SentryStackFrame_PostContext_" data-uid="Sentry.Protocol.SentryStackFrame.PostContext*"></a>
+  <h4 id="Sentry_Protocol_SentryStackFrame_PostContext" data-uid="Sentry.Protocol.SentryStackFrame.PostContext">PostContext</h4>
+  <div class="markdown level1 summary"><p>A list of source code lines after context_line (in order) – usually [lineno + 1:lineno + 5]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IList&lt;string&gt; PostContext { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_SentryStackFrame_PreContext.md&amp;value=---%0Auid%3A%20Sentry.Protocol.SentryStackFrame.PreContext%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Exceptions/SentryStackFrame.cs/#L73">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_SentryStackFrame_PreContext_" data-uid="Sentry.Protocol.SentryStackFrame.PreContext*"></a>
+  <h4 id="Sentry_Protocol_SentryStackFrame_PreContext" data-uid="Sentry.Protocol.SentryStackFrame.PreContext">PreContext</h4>
+  <div class="markdown level1 summary"><p>A list of source code lines before context_line (in order) – usually [lineno - 5:lineno]</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IList&lt;string&gt; PreContext { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_SentryStackFrame_SymbolAddress.md&amp;value=---%0Auid%3A%20Sentry.Protocol.SentryStackFrame.SymbolAddress%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Exceptions/SentryStackFrame.cs/#L132">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_SentryStackFrame_SymbolAddress_" data-uid="Sentry.Protocol.SentryStackFrame.SymbolAddress*"></a>
+  <h4 id="Sentry_Protocol_SentryStackFrame_SymbolAddress" data-uid="Sentry.Protocol.SentryStackFrame.SymbolAddress">SymbolAddress</h4>
+  <div class="markdown level1 summary"><p>An optional address that points to a symbol.
+We actually use the instruction address for symbolication but this can be used to calculate an instruction offset automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[DataMember(Name = &quot;symbol_addr&quot;, EmitDefaultValue = false)]
+public long? SymbolAddress { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_SentryStackFrame_Vars.md&amp;value=---%0Auid%3A%20Sentry.Protocol.SentryStackFrame.Vars%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Exceptions/SentryStackFrame.cs/#L93">View Source</a>
+  </span>
+  <a id="Sentry_Protocol_SentryStackFrame_Vars_" data-uid="Sentry.Protocol.SentryStackFrame.Vars*"></a>
+  <h4 id="Sentry_Protocol_SentryStackFrame_Vars" data-uid="Sentry.Protocol.SentryStackFrame.Vars">Vars</h4>
+  <div class="markdown level1 summary"><p>A mapping of variables which were available within this frame (usually context-locals).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDictionary&lt;string, string&gt; Vars { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/getsentry/sentry-dotnet-protocol/new/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/apiSpec/new?filename=Sentry_Protocol_SentryStackFrame.md&amp;value=---%0Auid%3A%20Sentry.Protocol.SentryStackFrame%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/getsentry/sentry-dotnet-protocol/blob/bb15647e4973cdd2d259deb4e5759b0fdb21cbec/src/Sentry.Protocol/Exceptions/SentryStackFrame.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
