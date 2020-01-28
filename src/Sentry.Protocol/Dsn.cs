@@ -47,6 +47,7 @@ namespace Sentry
         {
             var parsed = Parse(dsn, throwOnError: true);
             Debug.Assert(parsed != null, "Parse should throw instead of returning null!");
+            if (parsed == null) throw new ArgumentException("Invalid DSN failed to parse.");
 
             _dsn = parsed.Item1;
             ProjectId = parsed.Item2;
